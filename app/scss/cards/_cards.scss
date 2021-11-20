@@ -1,0 +1,73 @@
+.cards {
+  padding: 70px 0 100px;
+  
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+   padding: 0 20px;
+  }
+}
+
+.card {
+  padding: 51px 60px;
+  display: inline-block;
+  border: 1px solid #37583C;
+  border-radius: 20px;
+  width: 292px;
+  height: 259px;
+  box-shadow: transparent;
+  background: #05030E;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: rgba(5, 4, 14, 0.4);
+    box-shadow: 0px 34px 74px rgba(162, 220, 137, 0.2);
+    transform: scale(1.1);
+    margin-top: -20px;
+  }
+
+  &:hover .card__image{
+    background: linear-gradient(139.33deg, #BBC423 -14.59%, #E99A3D 99.86%);
+    box-shadow: 0px 14px 44px rgba(220, 152, 57, 0.6);
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 52px;
+  }
+
+  &__image {
+    padding: 12px;
+    border: 1px solid #37583C;
+    border-radius: 10px;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 19px;
+    transition: all 0.6s linear;
+  }
+
+  .card__img{
+    fill: #E2F685;
+  }
+
+ 
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 1.4;
+    @extend %montserrat-700;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}

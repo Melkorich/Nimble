@@ -24,7 +24,6 @@
     min-height: 100vh;
   }
 
-
   &__top {
     padding: 60px 0 20px;
   }
@@ -130,17 +129,13 @@
   }
 
   &__nav-icon {
-    margin-top: auto;
-    margin-bottom: auto;
-    text-align: center;
+    margin: auto;
     padding-bottom: 20px;
   }
 
   .header-icon {
-    background-color: transparent;
-    outline: none;
-    border: none;
-    margin: 0 auto;
+    display: inline-block;
+    cursor: pointer;
   }
 }
 
@@ -164,7 +159,7 @@
 
     &:focus {
       color: #B4F299;
-    }
+    } 
 
     &:hover {
       color: #B4F299;
