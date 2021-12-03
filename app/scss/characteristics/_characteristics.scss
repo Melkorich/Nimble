@@ -1,0 +1,108 @@
+.characteristics {
+
+
+  &__text {
+    padding: 80px 5px 70px;
+    width: 50%;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 1.2;
+    color: #fff;
+    @extend %montserrat-700;
+    margin-bottom: 58px;
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__descr {
+    display: flex;
+  }
+
+  &__names {
+    margin-right: 30px;
+    width: 250px;
+  }
+
+  &__name {
+    color: #8FA2A6;
+    line-height: 2;
+    margin-bottom: 20px;
+    padding-left: 65px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-image: url('../images/characteristics/line.svg');
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: contain;
+      width: 36px;
+      height: 1px;
+      top: 12px;
+      left: 0;
+    }
+  }
+
+  &__name:last-child {
+    margin-bottom: 0;
+  }
+
+
+  &__items {
+    width: 150px;
+  }
+
+  &__item {
+    line-height: 2;
+    margin-bottom: 20px;
+  }
+
+  &__item:last-child {
+    margin-bottom: 0;
+  }
+
+
+  &__info {
+    width: 50%;
+    min-width: 612px;
+    margin-right: 150px;
+    border-radius: 20px;
+    border: 1px solid #37583C;
+    text-align: center;
+    padding: 65px 75px 70px;
+  }
+
+  &__info-image {
+    width: 450px;
+    height: 316px;
+    margin-bottom: 57px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__info-text {
+    line-height: 1.6;
+    @extend %montserrat-700;
+    color: #B4F299;
+    margin-bottom: 8px;
+  }
+
+  &__info-number {
+    font-size: 34px;
+    line-height: 1.2;
+    @extend %montserrat-800;
+    color: #E2F685;
+  }
+
+  
+  
+}

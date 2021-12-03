@@ -26,7 +26,7 @@
 
   .jq-selectbox__select {
     height: 32px;
-    padding: 0 30px 0 0;
+    padding: 0 25px 0 0;
     border: none;
     background: transparent;
     box-shadow: none;
@@ -36,9 +36,13 @@
     font-size: 24px;
     line-height: 1;
     outline: none;
+    width: 276px;
+    cursor: pointer;
+    transition: all 0.3s;
 
     &:hover {
       background: transparent;
+      color: #B4F299;
     }
   }
 
@@ -70,11 +74,18 @@
     -ms-user-select: none;
     user-select: none;
     white-space: nowrap;
-    background-color: #2a491d;
+    background-color: rgba(#2a491d, 0.2);
     padding: 5px;
     font-size: 16px;
     line-height: 2;
     cursor: pointer;
+    border-bottom: 1px solid rgba(#80e456, 0.3);
+    min-width: 276px;
+    transition: all 0,3s;
+
+    &:hover {
+      background-color: rgba(#4e7a39, 0.2);
+    }
   }
 
   &__list {
@@ -87,8 +98,6 @@
       @extend %montserrat-600;
       text-transform: uppercase;
       position: relative;
-
-      
     }
 
     .numbers__item:nth-child(odd) {
@@ -151,7 +160,6 @@
       margin-bottom: 25px;
     }
   }
-
 } 
 
 
