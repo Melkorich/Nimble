@@ -1,0 +1,222 @@
+.partners {
+  padding: 0 0 100px 0;
+
+  &__inner {
+    display: flex;
+  }
+
+  &__image {
+    position: relative;
+    width: 800px;
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      margin-top: -50px;
+      left: -50px;
+    }
+  }
+
+  &__content {
+    min-width: 500px; 
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 1.2;
+    @extend %montserrat-700;
+    color: #fff;
+    margin-bottom: 52px;
+  }
+
+  &__description {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__text {
+    color: #8FA2A6;
+    max-width: 722px;
+    width: 100%;
+    font-size: 14px;
+  }
+
+}
+
+
+.bar {
+  margin-bottom: 100px;
+
+  &__item {
+    position: relative;
+    width: 100%;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &__item-heading {
+    display: flex;
+    align-items: center;
+  }
+
+  &__number {
+    font-size: 14px;
+    line-height: 2;
+    display: inline-block;
+  }
+
+  &__descr {
+    padding-left: 60px;
+    position: relative;
+    line-height: 1.25;
+    display: inline-block;
+
+    &::before {
+      position: absolute;
+      content: '';
+      left: 12px;
+      top: 10px;
+      width: 36px;
+      height: 1px;
+    }
+  }
+
+  &__scroll {
+    width: 418px;
+    position: relative;
+    display: inline-block;
+    height: 8px;
+    border-radius: 25px;
+    background: #3C3A46;;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      height: 100%;
+      border-radius: 25px;
+      animation: bar 3s ease;
+    }
+  }
+
+  &__item:nth-child(1) .bar__descr {
+    background-color: #E2F685;
+    background-image: linear-gradient(90deg, #E2F685, #8AF9AD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &::before {
+      background: linear-gradient(105.56deg, #E2F685 18.43%, #8AF9AD 89.58%);
+    }
+  }
+
+  &__item:nth-child(2) .bar__descr,
+  &__item:nth-child(3) .bar__descr {
+    background-color: #CAEE39;
+    background-image: linear-gradient(90deg, #CAEE39, #E99A3D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &::before {
+      background: linear-gradient(139.33deg, #CAEE39 -14.59%, #E99A3D 99.86%);
+    }
+  }
+
+  &__item:nth-child(4) .bar__descr,
+  &__item:nth-child(5) .bar__descr {
+    background-color: #EED139;
+    background-image: linear-gradient(90deg, #EED139, #E9713D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &::before {
+      background: linear-gradient(139.33deg, #EED139 -14.59%, #E9713D 99.86%);
+    }
+  }
+
+  &__item:nth-child(6) .bar__descr,
+  &__item:nth-child(7) .bar__descr {
+    background-color: #EE6439;
+    background-image: linear-gradient(90deg, #EE6439, #E9713D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &::before {
+      background: linear-gradient(139.33deg, #EE6439 -14.59%, #E9713D 99.86%);
+    }
+  }
+
+  &__item:nth-child(1) .bar__scroll::before {
+    width: 100%;
+    background: linear-gradient(105.56deg, #E2F685 18.43%, #8AF9AD 89.58%);
+  }
+
+  &__item:nth-child(2) .bar__scroll::before,
+  &__item:nth-child(3) .bar__scroll::before {
+    background: linear-gradient(139.33deg, #CAEE39 -14.59%, #E99A3D 99.86%);
+    width: 50%;
+  }
+
+  &__item:nth-child(4) .bar__scroll::before,
+  &__item:nth-child(5) .bar__scroll::before {
+    background: linear-gradient(139.33deg, #EED139 -14.59%, #E9713D 99.86%);
+    width: 40%;
+  }
+
+  &__item:nth-child(6) .bar__scroll::before,
+  &__item:nth-child(7) .bar__scroll::before {
+    background: linear-gradient(139.33deg, #EE6439 -14.59%, #E9713D 99.86%);
+    width: 20%;
+  }
+
+  &__percentage {
+    padding-left: 10px;
+    @extend %montserrat-800;
+    font-size: 26px;
+    line-height: 1.2;
+    text-shadow: 0px 24px 64px rgba(138, 249, 173, 0.3);
+    background-color: #E2F685;
+    background-image: linear-gradient(90deg, #E2F685, #8AF9AD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__item:nth-child(2) .bar__percentage,
+  &__item:nth-child(3) .bar__percentage {
+    background-color: #CAEE39;
+    background-image: linear-gradient(90deg, #CAEE39, #E99A3D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__item:nth-child(4) .bar__percentage,
+  &__item:nth-child(5) .bar__percentage {
+    background-color: #EED139;
+    background-image: linear-gradient(90deg, #EED139, #E9713D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__item:nth-child(6) .bar__percentage,
+  &__item:nth-child(7) .bar__percentage {
+    background-color: #EE6439;
+    background-image: linear-gradient(90deg, #EE6439, #E9713D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+}
+
+@keyframes bar {
+  from {
+    width: 0;
+  }
+}
