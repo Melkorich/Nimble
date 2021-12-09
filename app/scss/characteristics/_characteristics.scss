@@ -4,6 +4,14 @@
   &__text {
     padding: 80px 5px 70px;
     width: 50%;
+
+    @include maxw($xl) {
+      width: 100%;
+    }
+
+    @include maxw($xs) {
+     padding: 40px 0 20px;
+    }
   }
 
   &__title {
@@ -12,20 +20,38 @@
     color: #fff;
     @extend %montserrat-700;
     margin-bottom: 58px;
+
+    @include maxw($xs) {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
   }
 
   &__inner {
     display: flex;
     justify-content: space-between;
+
+    @include maxw($xl) {
+      display: block;
+    }
   }
 
   &__descr {
     display: flex;
+
+    @include maxw($xs) {
+      justify-content: space-between;
+    }
   }
 
   &__names {
     margin-right: 30px;
     width: 250px;
+
+    @include maxw($xs) {
+      margin-right: 15px;
+      width: 50%;
+    }
   }
 
   &__name {
@@ -34,6 +60,12 @@
     margin-bottom: 20px;
     padding-left: 65px;
     position: relative;
+
+    @include maxw($xs) {
+      font-size: 14px;
+      margin-bottom: 15px;
+      padding-left: 0px;
+    }
 
     &::before {
       content: '';
@@ -46,6 +78,10 @@
       height: 1px;
       top: 12px;
       left: 0;
+
+      @include maxw($xs) {
+        display: none;
+      }
     }
   }
 
@@ -56,16 +92,25 @@
 
   &__items {
     width: 150px;
+
+    @include maxw($xs) {
+      width: 50%;
+    }
   }
 
   &__item {
     line-height: 2;
     margin-bottom: 20px;
+
+    @include maxw($xs) {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
   }
 
   &__item:last-child {
     margin-bottom: 0;
-  }
+  } 
   
 
   &__info {
@@ -75,6 +120,21 @@
     border: 1px solid #37583C;
     text-align: center;
     padding: 65px 75px 70px;
+
+    @include maxw($xl) {
+      padding: 10px;
+      min-width: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-right: 0;
+    }
+
+    @include maxw($xs) {
+      padding: 10px 0;
+    }
   }
 
   &__info-image {
@@ -82,10 +142,25 @@
     height: 316px;
     margin-bottom: 57px;
 
+    @include maxw($sm) {
+      width: 300px;
+      height: 300px;
+      margin-bottom: 0px;
+    }
+
+    @include maxw($xs) {
+      width: 260px;
+      height: 250px;
+    }
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+
+      @include maxw($sm) {
+        object-fit: contain;
+      }
     }
   }
 
@@ -94,6 +169,10 @@
     @extend %montserrat-700;
     color: #B4F299;
     margin-bottom: 8px;
+
+    @include maxw($sm) {
+      font-size: 14px;
+    }
   }
 
   &__info-number {
@@ -101,6 +180,10 @@
     line-height: 1.2;
     @extend %montserrat-800;
     color: #E2F685;
+
+    @include maxw($sm) {
+      font-size: 20px;
+    }
   }
 
   

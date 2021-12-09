@@ -1,6 +1,10 @@
 .sale {
   padding: 150px 0;
 
+  @include maxw($xl) {
+    padding: 50px 0;
+  }
+
   &__title {
     text-align: center;
     font-size: 34px;
@@ -12,18 +16,35 @@
 
   &__inner {
     display: flex;
+
+    @include maxw($lg) {
+      display: block;
+    }
   }
 
   &__cards {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -12px;
+
+    @include maxw($lg) {
+      margin: 0;
+    }
+
+    @include maxw($xsm) {
+      display: block;
+    }
   }
 
   &__info {
     max-width: 370px;
     width: 100%;
     margin-left: 15px;
+
+    @include maxw($lg) {
+      max-width: 100%;
+      margin-left: 0;
+    }
   }
 
   &__btn {
@@ -57,11 +78,20 @@
     box-shadow: 0px 34px 74px rgba(162, 220, 137, 0.2);
     transition: all 0.3s ease-in-out;
     width: 175px;
+
+    @include maxw($xsm) {
+      width: 100%;
+      display: block;
+    }  
    
 
     &:hover {
       transform: scale(1.1);
       border: 1px solid #E2F685;
+
+      @include maxw($xsm) {
+        transform: none;
+      }
     }
   }
 
@@ -122,6 +152,10 @@
   border-image-slice: 1;
   margin-bottom: 22px;
 
+  @include maxw($xs) {
+    padding: 20px;
+  }
+
   &__top {
     display: flex;
     justify-content: space-between;
@@ -160,14 +194,4 @@
   }
 }
 
-
-
-.info-card__image {
-}
-.info-card__content {
-}
-.info-card__subtitle {
-}
-.info-card__text {
-}
 

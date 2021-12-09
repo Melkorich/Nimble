@@ -1,21 +1,33 @@
 .about {
-  padding: 70px 0 150px;
+  padding: 70px 0 50px;
+
+  @include maxw($md) {
+    padding: 0;
+  }
 
   &__inner {
     display: flex;
     justify-content: space-between;
-  }
 
+    @include maxw($md) {
+      display: block;
+    }
+  }
+ 
   &__content {
     max-width: 787px;
     width: 100%;
-  }
+  } 
 
   &__title {
     @extend %montserrat-700;
     font-size: 24px;
     line-height: 1;
     margin-bottom: 54px;
+
+    @include maxw($xs) {
+      margin-bottom: 20px;
+    }
   } 
 
   &__text {
@@ -24,20 +36,29 @@
 
   &__text p:not(:last-child) {
     margin-bottom: 30px;
-  }
+  } 
 
   &__image {
-    position: relative;
-  }
+    width: 40%;
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
 
-  &__image::before {
-    position: absolute;
-    content: '';
-    background-image: url('../images/icons/about-vector.svg');
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 74px;
-    height: 74px;
+    @include maxw($md) {
+      margin-right: 0;
+      display: block;
+      width: 100%;
+    }
+   
+
+    img {
+      max-width: 360px;
+      height: 300px;
+      object-fit: cover;
+
+      @include maxw($md) {
+        width: 100%;
+      }
+    }
   }
 }

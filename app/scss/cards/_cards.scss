@@ -1,13 +1,25 @@
 .cards {
   padding: 70px 0 100px;
+
+  @include maxw($xs) {
+    padding: 0 0 50px;
+  }
   
   &__list {
     display: flex;
     flex-wrap: wrap;
+
+    @include maxw($xs) {
+      display: block;
+    }
   }
 
   &__item {
-   padding: 0 20px;
+   padding: 20px;
+
+    @include maxw($xs) {
+      padding: 10px 0;
+    }
   }
 }
 
@@ -21,13 +33,28 @@
   box-shadow: transparent;
   background: #05030E;
   transition: all 0.3s ease-in-out;
- 
+
+  @include maxw($xs) {
+    width: 100%;
+    min-height: 200px;
+    height: 100%;
+    padding: 40px;
+  }
 
   &:hover {
     background: rgba(5, 4, 14, 0.4);
     box-shadow: 0px 34px 74px rgba(162, 220, 137, 0.2);
     transform: scale(1.1);
     margin-top: -20px;
+
+    @include maxw($md) {
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      transform: none;
+      margin-top: 0;
+      box-shadow: none;
+    }
   }
 
   &:hover .card__image{
@@ -39,6 +66,10 @@
     display: flex;
     align-items: center;
     margin-bottom: 52px;
+
+    @include maxw($xs) {
+      margin-bottom: 15px;
+    }
   }
 
   &__image {

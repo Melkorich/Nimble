@@ -14,7 +14,7 @@ body {
   clip-path: inset(100%);
   white-space: nowrap;
   border: 0;
-}
+}    
 
 body {
   @extend %montserrat-500;
@@ -24,11 +24,16 @@ body {
   color: #fff;
 }
 
+.body--active {
+  overflow: hidden;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
   overflow: hidden;
 } 
+
  
 .main {
   flex-grow: 1;
@@ -42,6 +47,8 @@ body {
 
 .logo {
   min-width: 145px;
+  position: relative;
+  z-index: 10;
 }
 
 .logo__img {

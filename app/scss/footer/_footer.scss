@@ -3,6 +3,10 @@
   text-align: center;
   position: relative;
 
+  @include maxw($xl) {
+   padding: 100px 0 0;
+  }
+
   &::before {
     position: absolute;
     content: '';
@@ -22,6 +26,11 @@
     line-height: 1.2;
     @extend %montserrat-400;
     margin-bottom: 100px;
+
+    @include maxw($xl) {
+      font-size: 24px;
+      margin-bottom: 50px;
+    }
   }
 
   &__mail {
@@ -30,6 +39,15 @@
     font-size: 34px;
     line-height: 1.2;
     color: #B4F299;
+    display: inline-block;
+
+    @include maxw($xl) {
+      font-size: 26px;
+    }
+
+    @include maxw($sm) {
+      font-size: 18px;
+    }
   } 
 
   &__socials {

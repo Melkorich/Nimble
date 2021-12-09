@@ -1,9 +1,27 @@
 .header {
+  background-image: url('../images/header/header-bg1.png');
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;
   position: relative;
-  // min-height: 100vh;
+
+  @include  maxw($sm) {
+    background-image: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image:url('../images/header/mobile-bg.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 100%;
+      height: 540px;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
 
   &::before {
     content: '';
@@ -16,16 +34,29 @@
     width: 450px;
     height: 450px;
     z-index: -1;
+
+    @include maxw($xxl) {
+      display: none;
+    }
   }
   
   &__inner {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
+    @include maxw($xs) {
+      display: block;
+      min-height: auto;
+    }
   }
 
   &__top {
     padding: 60px 0 20px;
+
+    @include maxw($xl) {
+      padding: 30px 0 20px;
+    }
   }
   
   &__top-inner {
@@ -33,17 +64,29 @@
     justify-content: space-between;
     align-items: center;
     height: 100px;
+
+    @include maxw($sm) {
+      height: 50px;
+    }
   }
 
   &__buttons {
     display: flex;
-  }
 
-  &__btn {
+    @include maxw($sm) {
+      position: absolute;
+      top: 120px;
+      left: 10px;
+    }
+  } 
+
+  &__btn { 
     width: 156px;
     height: 40px;
     padding: 10px 29px;
-    transition: all 0.5s;
+    position: relative;
+    z-index: 10;
+    @extend %montserrat-600;
     
     &:hover {
       background: transparent;
@@ -66,6 +109,10 @@
     transform: translate(-50%);
     left: -120px;
     transform: rotate(-90deg);
+
+    @include maxw($md) {
+      display: none;
+    }
   }
   &__aside-items {
     display: flex;
@@ -85,11 +132,20 @@
     &:hover {
       color: #fff;
     }
-  }
+  } 
 
   &__content {
     margin-top: auto;
     padding-left: 200px;
+    padding-top: 20px;
+
+    @include maxw($md) {
+      padding-left: 0;
+    }
+
+    @include maxw($xs) {
+      margin-top: 300px;
+    }
   }
 
   &__main {
@@ -97,7 +153,21 @@
     flex-direction: column;
     max-width: 550px;
     margin-right: -100px;
-  }
+
+    @include maxw($md) {
+      max-width: 100%;
+      width: 100%;
+      margin-right: 0;
+    }
+
+    @include maxw($sm) {
+      padding-top: 200px;
+    }
+
+    @include maxw($xs) {
+     padding-top: 0;
+    }
+  } 
 
   &__title {
     @extend %montserrat-800;
@@ -105,6 +175,10 @@
     font-size: 48px;
     line-height: 1.2;
     margin-bottom: 25px;
+
+    @include maxw($sm) {
+      font-size: 31px;
+    }
   }
 
   &__text {
@@ -121,6 +195,10 @@
     padding: 21px 34px;
     border-radius: 17px;
 
+    @include maxw($sm) {
+      margin-bottom: 80px;
+    }
+
     &:hover {
       background: transparent;
       border: 2px solid #E2F685;
@@ -131,11 +209,75 @@
   &__nav-icon {
     margin: auto;
     padding-bottom: 20px;
+
+    @include maxw($xs) {
+      display: none;
+    }
   }
 
   .header-icon {
     display: inline-block;
     cursor: pointer;
+  }
+}
+
+.menu__burger {
+  display: none;
+  justify-content: center;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+  margin-right: 20px;
+
+  @include maxw($xl) {
+    display: block;
+  }
+
+  &:hover::before{
+    width: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &:hover::after {
+    width: 100%;
+  }
+
+  span {
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    top: 14px;
+    left: 0;
+    background-color:#B4F299;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    background-color:#B4F299;
+    left: 0;
+    height: 4px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &::before {
+    width: 100%;
+    top: 0;
+  }
+
+  &::after {
+    width: 10px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -145,10 +287,39 @@
 
   &__list {
     display: flex;
+
+    @include maxw($xl) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      padding: 150px 10px 20px;
+      flex-direction: column;
+      text-align: center;
+      background-color:rgba(#171a0e, 0.6);
+      backdrop-filter: blur(8px);
+      z-index: 9;
+      transform: translateX(-200%);
+      transition: transform 0.5s;
+      overflow: auto;
+
+      @include maxw($sm) {
+        padding: 200px 10px 20px;
+      } 
+    }
+  }
+
+  .menu__list--active {
+    transform: translateX(0%);
   }
 
   &__item {
     margin-right: 50px;
+
+    @include maxw($xl) {
+      margin: 0;
+    }
   }
 
   &__link {
@@ -156,6 +327,12 @@
     line-height: 1.25;
     @extend %montserrat-600;
     transition: color 0.3s, opacity 0.1s;
+
+    @include maxw($xl) {
+     display: block;
+     padding: 20px 0;
+     text-transform: uppercase;
+    }
 
     &:focus {
       color: #B4F299;

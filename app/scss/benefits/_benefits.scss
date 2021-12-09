@@ -1,36 +1,77 @@
 .benefits {
   padding: 90px 0 0;
-  position: relative;
 
-  &::before {
-    position: absolute;
-    content: '';
-    background-image: url('../images/benefits/bg.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    top: 0;
-    left: 0;
-    width: 848px;
-    height: 848px;
-  } 
+  @include maxw($xl) {
+    padding: 0;
+  }
 
   &__inner {
     display: flex;
+
+    @include maxw($xl) {
+      flex-direction: column;
+    }
   }
 
-  &__image {
-    width:50% ;
+  &__image{
+    width: 944px;
     position: relative;
-    
-    img {
+
+    &::before {
+      content: '';
       position: absolute;
-      left: 40px;
+      background-image:url('../images/benefits/bg.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 848px;
+      height: 848px;
+      left: -100px;
+      top: -50px;
+      z-index: -1;
+    }
+
+    @include maxw($xl) {
+      max-width: 600px;
+      width: 100%;
+      height: 600px;
+      margin: 0 auto;
+    }
+
+    @include maxw($xs) {
+      height: 400px;
+    }
+
+    .benefits__img {
+      width: 100%;
+      height: 100%;
       object-fit: contain;
+      margin-top: -100px;
+      margin-left: 50px;
+
+      @include maxw($xl) {
+       margin-left: 0;
+       margin-top: 0;
+       opacity: 0.5;
+      }
+
+      @include maxw($sm) {
+        margin-top: -150px;
+      }
     }
   }
 
   &__content {
     max-width: 674px;
+
+    @include maxw($xl) {
+      max-width: 100%;
+      width: 100%;
+      margin-top: -150px;
+    }
+
+    @include maxw($sm) {
+      margin-top: -200px;
+    }
   }
 
   &__title {
@@ -42,6 +83,13 @@
     padding-left: 80px;
     position: relative;
 
+    @include maxw($sm) {
+      font-size: 30px;
+      padding-left: 0;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
     &::before {
       position: absolute;
       content: '';
@@ -52,17 +100,33 @@
       height: 59px;
       top: 5px;
       left: 0;
-    }
+
+      @include maxw($sm) {
+        display: none;
+      }
+    } 
   }  
 
   &__items {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -32px;
+
+    @include maxw($xl) {
+      margin: 0;
+    }
+
+    @include maxw($sm) {
+      display: block;
+    }
   }
 
   &__item {
     padding: 0 16px 42px 16px;
+
+    @include maxw($sm) {
+      padding: 10px 0;
+    }
   }
 
   &__item:nth-child(1) .benefits__item-title::before {
@@ -119,6 +183,13 @@
     height: 263px;
     border: 1px solid #37583C;
     border-radius: 20px;
+
+    @include maxw($sm) {
+      width: 100%;
+      height: 250px;
+      padding: 20px;
+      height: 200px;
+    }
   }
 
   &__item-title {
@@ -132,7 +203,14 @@
     display: inline-block;
     @extend %montserrat-700;
     position: relative;
-  }
+    @include line-climp(2);
+
+    @include maxw($sm) {
+      &.benefits__item-title::before {
+        display: none;
+      }
+    }
+  } 
 
   &__item-text {
     font-size: 12px;
@@ -143,14 +221,18 @@
   }
 
   &__text {
-    padding-top: 116px;
+    padding-top: 30px;
     text-align: center;
     @extend %montserrat-700;
     font-size: 24px;
     line-height: 1.2;
     max-width: 794px;
     margin: 0 auto 50px;
-  }
+
+    @include maxw($sm) {
+      font-size: 16px;
+    }
+  } 
 
   &__link {
     text-align: center;
