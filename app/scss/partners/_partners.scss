@@ -88,12 +88,17 @@
   &__item-heading {
     display: flex;
     align-items: center;
+
+    @include maxw($xsm) {
+      align-items: start;
+    }
   }
 
   &__number {
     font-size: 14px;
     line-height: 2;
     display: inline-block;
+    min-width: 75px;
   }
 
   &__descr {
