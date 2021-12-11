@@ -56,4 +56,17 @@ body {
   object-fit: contain;
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05030E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient( to top, #0F3123,#B4F299);
+  border-radius: 10px;
+}
+
 
